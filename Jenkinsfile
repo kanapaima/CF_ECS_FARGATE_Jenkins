@@ -1,6 +1,6 @@
 node() {
         stage("POLL SCM") {
-                git credentialsId: 'github', url: 'https://github.com/kanapaima/CF_ECS_FARGATE_Jenkins.git/'
+                git credentialsId: 'kanapaima', url: 'https://github.com/kanapaima/CF_ECS_FARGATE_Jenkins.git/'
         }
 	stage("CF Lintingi and Json Validation"){
 	    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AKIAI46BZJWIBRTEL4FA', credentialsId: 'ECS_FARGATE', secretKeyVariable: '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']]) {
